@@ -5,7 +5,6 @@ from time import time
 from django.db import models
 
 
-import wallet
 
 
 
@@ -16,14 +15,8 @@ class Customer(models.Model):
     adress=models.TextField()
     email=models.EmailField()
     phone_number=models.CharField(max_length=15)
-    gender=models.CharField(max_length=10,null=True)
+    customergender=models.CharField(max_length=10,null=True)
     age=models.CharField(max_length=10)
-    # GENDER_CHOICES=(
-    #     ('m','Male'),
-    #      ('f','Female')
-    #  )
-
-    # gender=models.CharField(max_length=6,choices=GENDER_CHOICES,null=True)
     profile_picture=models.ImageField(upload_to='profile_picture/',null=True)
 class Account(models.Model):   
     account_name=models.CharField(max_length=20)
@@ -32,8 +25,8 @@ class Account(models.Model):
     account_balance=models.PositiveBigIntegerField()
 class Loan(models.Model): 
     amount=models.PositiveBigIntegerField()
-    period_of_loan=models.DateTimeField()
-    repayment_reschedules=models.DateTimeField()
+    period_of_loan=models.DateTimeFielddefault=datetime.now()
+    repayment_reschedules=models.DateTimeField(default=datetime.now)
     loan_id=models.CharField(max_length=20) 
     loan_type=models.CharField(max_length=20) 
 class Chatbot(models.Model):
@@ -55,7 +48,7 @@ class Wallet(models.Model):
     balance=models.PositiveBigIntegerField()
     user_id=models.PositiveBigIntegerField() 
     amount=models.PositiveBigIntegerField() 
-    time=models.DateTimeField()
+    time=models.DateTimeField(default=datetime.now)
     status=models.CharField(max_length=100)
     history=models.DateTimeField(default=datetime.now)
 class Qr_code(models.Model):
@@ -68,7 +61,6 @@ class Receipt(models.Model):
 class Reward(models.Model):
     name=models.CharField(max_length=20)   
     customer_id=models.PositiveBigIntegerField() 
-    gender=models.CharField(max_length=20)
 class Third_party(models.Model):
     account_name=models.CharField(max_length=20)
     account_number=models.PositiveBigIntegerField()
@@ -80,7 +72,7 @@ class Transaction(models.Model):
     transaction_number=models.CharField(max_length=20)
     transaction_type=models.CharField(max_length=20)
     transaction_charge=models.BigIntegerField
-    date_and_Time=models.DateTimeField
+    date_and_time=models.DateTimeField(default=datetime.now)
     wallet=models.ForeignKey(null=True,on_delete=models.CASCADE,to=Wallet)
     receipt=models.OneToOneField(Receipt,on_delete=models.CASCADE,primary_key=True)
     origin_account= models.ForeignKey(Account,on_delete=models.CASCADE,related_name="Transaction_origin_account",null=True)

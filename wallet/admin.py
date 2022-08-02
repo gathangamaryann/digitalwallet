@@ -5,7 +5,7 @@ from django.contrib import admin
 
 
 
-from.models import Account, Chatbot, Currency, Customer, Loan, Notifications, Qr_code, Receipt, Reward, Third_party, Transaction, Wallet
+from.models import Account, Card, Chatbot, Currency, Customer, Loan, Notifications, Qr_code, Receipt, Reward, Third_party, Transaction, Wallet
 
 
 
@@ -26,3 +26,4 @@ admin.site.register(Receipt)
 admin.site.register(Reward)
 admin.site.register(Third_party)
 admin.site.register(Transaction)
+admin.site.register(Card)
