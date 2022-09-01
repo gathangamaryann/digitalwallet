@@ -3,16 +3,20 @@ from distutils.command.upload import upload
 from importlib.util import module_from_spec
 from time import time
 from django.db import models
+# from django.contrib import admin
 
 
 
 
 
 # Create your models here.
+# class Customer(models.Model):
+#    
 class Customer(models.Model):
-    first_name=models.CharField(max_length=20)
-    last_name=models.CharField(max_length=20)
-    adress=models.TextField()
+    first_name=models.CharField(max_length=20,null=True)
+    last_name=models.CharField(max_length=20,null=True)
+    adress=models.TextField()  
+    search_fields = ('first_name', 'last_name',)
     email=models.EmailField()
     phone_number=models.CharField(max_length=15)
     customergender=models.CharField(max_length=10,null=True)
