@@ -21,7 +21,7 @@ class Customer(models.Model):
     phone_number=models.CharField(max_length=15)
     customergender=models.CharField(max_length=10,null=True)
     age=models.CharField(max_length=10)
-    profile_picture=models.ImageField(upload_to='profile_picture/',null=True)
+    # profile_picture=models.ImageField(upload_to='profile_picture/',null=True)
 class Account(models.Model):   
     account_name=models.CharField(max_length=20)
     account_number=models.CharField(max_length=20)
