@@ -29,11 +29,12 @@
                 <th>First Name   </th>
                 <th>Age    </th>
                 <th>Email   </th>
-            {% for Customer in customers %}
+            {% for wallet in customers %}
             <tr>
                 <td>{{ Customer.first_name }}   </td>
                 <td>{{ Customer.age }}   </td>
                 <td>{{ Customer.email }}   </td>
+                <td><a href="{%url'wallet_profile id=wallet.id%}">profile</a></td>
             </tr>
         {%endfor%}
         </table>

@@ -15,8 +15,7 @@ from django.db import models
 class Customer(models.Model):
     first_name=models.CharField(max_length=20,null=True)
     last_name=models.CharField(max_length=20,null=True)
-    adress=models.TextField()  
-    search_fields = ('first_name', 'last_name',)
+    address=models.TextField()  
     email=models.EmailField()
     phone_number=models.CharField(max_length=15)
     customergender=models.CharField(max_length=10,null=True)

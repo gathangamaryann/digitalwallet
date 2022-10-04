@@ -22,8 +22,22 @@ urlpatterns=[
     path("receipts/",views.list_wallet,name="receipts"),
     path("rewards/",views.list_reward,name="rewards"),
     path("transactions/",views.list_transaction,name="transactions"),
-    path("cards/",views.list_card,name="cards")
-     
+    path("cards/",views.list_card,name="cards"),
+    path("customers/<int:id>/",views.customer_profile,name="customers"),
+    path("customers/edit/<int:id>/",views.edit_customer,name="edit_customer"),
+    path("wallet/<int:id>/",views.wallet_profile,name="wallet"),
+    path("wallet/edit/<int:id>/",views.edit_wallet,name="edit_wallet"),
+    path("wallet/<int:id>/",views.account_profile,name="accounts"),
+    path("wallet/edit/<int:id>/",views.edit_account,name="edit_account"),
+    path("wallet/<int:id>/",views.card_profile,name="card"),
+    path("wallet/edit/<int:id>/",views.edit_card,name="edit_card"),
+    path("wallet/<int:id>/",views.transaction_profile,name="transaction"),
+    path("wallet/edit/<int:id>/",views.edit_transaction,name="edit_transaction"),
+    path("wallet/<int:id>/",views.receipt_profile,name="receipts"),
+    path("wallet/edit/<int:id>/",views.edit_receipt,name="edit_receipt"),
+   
+   
+   
    
    
     

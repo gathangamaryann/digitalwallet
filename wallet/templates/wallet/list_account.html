@@ -29,11 +29,13 @@
                 <th>Account Name</th>
                 <th>Account Number </th>
                 <th>Account Pin </th>
-            {% for Customer in customers %}
+                <th>Account balance </th>
+            {% for Account in Accounts %}
             <tr>
                 <td>{{ Accounts.name }}   </td>
                 <td>{{ Accounts.number }}   </td>
                 <td>{{ Account.pin }}   </td>
+                <td>{{ Account.balance }}   </td>
             </tr>
         {%endfor%}
         </table>

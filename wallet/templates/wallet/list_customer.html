@@ -34,6 +34,7 @@
                 <td>{{ Customer.first_name }}   </td>
                 <td>{{ Customer.age }}   </td>
                 <td>{{ Customer.email }}   </td>
+                <td><a href="{%url'customer_profile' id=customer.id%}">profile</a></td>
             </tr>
         {%endfor%}
         </table>
